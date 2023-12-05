@@ -90,6 +90,7 @@ class TelaCriarConta extends StatelessWidget {
             InputCustom(controll:telefoneControll ,keyboard: TextInputType.number, label: 'Telefone',),
             InputCustom(controll:senhaControll ,keyboard: TextInputType.number, label: 'Senha',),
             InputCustom(controll:repeateSenhaControll ,keyboard: TextInputType.number, label: 'Repetir senha',),
+            InputCustom(controll:repeateSenhaControll ,keyboard: TextInputType.number, label: 'Repetir senha',),
             ],
           ),
         ),
