@@ -24,11 +24,14 @@ class MeuBotaolargo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextButton(onPressed: funcao, child: Text(label,  style: TextStyle(
-      color: MinhasCores.claro
-    ),),style: const ButtonStyle(backgroundColor: MaterialStatePropertyAll(MinhasCores.secundaria),
-  
-    ),
-  );
+    return Padding(
+      padding: const EdgeInsets.only(right: 20, left: 20),
+      child: TextButton(onPressed: funcao, child: Text(label,  style: TextStyle(
+       color: MinhasCores.claro
+      ),),style: const ButtonStyle(backgroundColor: MaterialStatePropertyAll(MinhasCores.secundaria),
+        minimumSize: MaterialStatePropertyAll(Size(900,40))
+      ),
+        ),
+    );
   }
 }

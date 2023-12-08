@@ -78,46 +78,46 @@ class TelaCriarConta extends StatelessWidget {
     return Scaffold(
       backgroundColor: MinhasCores.primaria,
       // appBar: AppBarCustom(title: 'title'),
-      drawer: Drawer(),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-        SizedBox(
-          child: Column(
-            children: [
-            InputCustom(controll:nomecontroll ,keyboard: TextInputType.name, label: 'Nome',),
-            InputCustom(controll:emailControll ,keyboard: TextInputType.name, label: 'Email',),
-            InputCustom(controll:telefoneControll ,keyboard: TextInputType.number, label: 'Telefone',),
-            InputCustom(controll:senhaControll ,keyboard: TextInputType.number, label: 'Senha',),
-            InputCustom(controll:repeateSenhaControll ,keyboard: TextInputType.number, label: 'Repetir senha',),
-            InputCustom(controll:repeateSenhaControll ,keyboard: TextInputType.number, label: 'Repetir senha',),
-            ],
-          ),
-        ),
-        SizedBox(
-          child: Column(
-            children: [
-              MeuBotao(funcao: (){
-                Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const RendaMensal()),);
-              }, label: 'Logar'),
-            const SizedBox(height: 20,),
-             const Text("ou entrar com"),
-            const SizedBox(height: 20,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  TextButton(onPressed: (){print('Clcado');}, child: Image.asset('assets/facebook.png', width: 40,),),
-                  TextButton(onPressed: (){print('Clcado');}, child: Image.asset('assets/twitter.png', width: 40,),),
-                  TextButton(onPressed: (){print('Clcado');}, child: Image.asset('assets/google.png', width: 40,),),
-                ],
-              )
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+          SizedBox(
+            child: Column(
+              children: [
+              InputCustom(controll:nomecontroll ,keyboard: TextInputType.name, label: 'Nome',),
+              InputCustom(controll:emailControll ,keyboard: TextInputType.name, label: 'Email',),
+              InputCustom(controll:telefoneControll ,keyboard: TextInputType.number, label: 'Telefone',),
+              InputCustom(controll:senhaControll ,keyboard: TextInputType.number, label: 'Senha',),
+              InputCustom(controll:repeateSenhaControll ,keyboard: TextInputType.number, label: 'Repetir senha',),
               ],
+            ),
           ),
-        )
-        
-        ],
+          SizedBox(
+            child: Column(
+              children: [
+                MeuBotao(funcao: (){
+                  Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const RendaMensal()),);
+                }, label: 'Logar'),
+              const SizedBox(height: 20,),
+               const Text("ou entrar com"),
+              const SizedBox(height: 20,),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    TextButton(onPressed: (){print('Clcado');}, child: Image.asset('assets/facebook.png', width: 40,),),
+                    TextButton(onPressed: (){print('Clcado');}, child: Image.asset('assets/twitter.png', width: 40,),),
+                    TextButton(onPressed: (){print('Clcado');}, child: Image.asset('assets/google.png', width: 40,),),
+                  ],
+                )
+                ],
+            ),
+          )
+          
+          ],
+        ),
       ),
     );
   }

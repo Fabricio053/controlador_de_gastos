@@ -1,3 +1,4 @@
 {
-    "cmake.sourceDirectory": "/home/paulo29/projeto_f7/linux"
+    "cmake.sourceDirectory": "/home/paulo29/projeto_f7/linux",
+    "easycode.model": "gpt-4"
 }

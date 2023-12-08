@@ -6,4 +6,5 @@ class MinhasCores {
   static const Color terciaria = Color.fromARGB(255, 10, 5, 65);
   static const Color claro = Color.fromARGB(255, 255, 255, 255);
   static const Color escuro = Color.fromARGB(255, 0, 0, 0);
+  static const Color azul = Color.fromARGB(255, 0, 71, 255);
 }
