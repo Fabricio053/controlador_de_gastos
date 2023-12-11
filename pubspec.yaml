@@ -39,6 +39,8 @@ dependencies:
   instagram_bottom_nav_bar: ^3.0.19
   persistent_bottom_nav_bar_v2: ^4.2.8
   bottom_nav_bar: ^1.0.3
+  firebase_auth: ^4.15.2
+  firebase_core: ^2.24.2
 
 dev_dependencies:
   flutter_test:

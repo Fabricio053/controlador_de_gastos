@@ -41,3 +41,13 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# Arquivos Firebase
+/firebase/
+/firebase.json
+/firebase-debug.log
+/.firebaserc
+/.firebase/
+
+# Arquivos de configuração Firebase
+/firebase_credentials.json
