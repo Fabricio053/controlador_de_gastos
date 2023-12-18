@@ -1,4 +1,4 @@
 {
-    "cmake.sourceDirectory": "/home/paulo29/projeto_f7/linux",
+    "cmake.sourceDirectory": "${workspaceFolder}/home/paulo29/.cache/firebase/tools/lib/node_modules/nan",
     "easycode.model": "gpt-4"
 }
