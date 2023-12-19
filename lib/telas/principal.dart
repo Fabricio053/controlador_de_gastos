@@ -21,8 +21,6 @@ class _TelaDashboardState extends State<TelaDashboard> {
     return Scaffold(
       backgroundColor: MinhasCores.primaria,
       body: Column(
-        // crossAxisAlignment: CrossAxisAlignment.stretch,
-        // mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Expanded(
             child: PersistentTabView(

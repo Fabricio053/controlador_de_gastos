@@ -4,17 +4,37 @@ import 'package:flutter/material.dart';
 import 'package:projeto_f7/componentes/appbar_custom.dart';
 import 'package:projeto_f7/componentes/text.dart';
 import 'package:projeto_f7/cores/cores.dart';
+import 'package:projeto_f7/firebase/dados_firebase.dart';
 import 'package:projeto_f7/telas/resumo_mensal.dart';
 
-class TelaHome extends StatelessWidget {
+class TelaHome extends StatefulWidget {
   const TelaHome({super.key});
+
+  @override
+  State<TelaHome> createState() => _TelaHomeState();
+}
+
+class _TelaHomeState extends State<TelaHome> {
+  double totalDespesas = 0.0;
+  double totalGanhos = 0.0;
+
+  void valorT () async{
+    totalDespesas = await DadosFirebase().totalDR('Despesas');
+    totalGanhos = await DadosFirebase().totalDR('Ganhos');
+  }
+
+  @override
+  initState() {
+    super.initState();
+    setState(() {
+      valorT();
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     List<Feature> features = [
       Feature(
-        // title: "Drink Water",
-        // color: Colors.blue,
         data: [
           0.3,
           0.1,
@@ -29,8 +49,6 @@ class TelaHome extends StatelessWidget {
         ],
       ),
       Feature(
-        // title: "Exercise",
-        // color: Colors.pink,
         data: [
           0.3,
           0.2,
@@ -76,10 +94,10 @@ class TelaHome extends StatelessWidget {
               ],
             )),
             const MesCardNext(),
-            const SizedBox(
+            SizedBox(
               child: Column(
                 children: [
-                  SizedBox(
+                 const SizedBox(
                     child: Column(
                       children: [
                         Text(
@@ -95,7 +113,7 @@ class TelaHome extends StatelessWidget {
                       ],
                     ),
                   ),
-                  SizedBox(
+                 const SizedBox(
                     height: 20,
                   ),
                   SizedBox(
@@ -105,15 +123,15 @@ class TelaHome extends StatelessWidget {
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            MyTextLabel(
+                            const MyTextLabel(
                               firstLabel: "Ganhos previstos",
                               lastLabel: "R\$ 0,00",
                             ),
                             MyTextLabel(
                               firstLabel: "Valor recebido",
-                              lastLabel: "R\$ 0,00",
+                              lastLabel: "R\$ $totalGanhos",
                             ),
-                            MyTextLabel(
+                            const MyTextLabel(
                               firstLabel: "Falta receber  ",
                               lastLabel: "R\$ 0,00",
                             )
@@ -122,15 +140,15 @@ class TelaHome extends StatelessWidget {
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            MyTextLabel(
+                          const MyTextLabel(
                               firstLabel: "Desepesas previstas",
                               lastLabel: "R\$ 0,00",
                             ),
                             MyTextLabel(
                               firstLabel: "Valor pago",
-                              lastLabel: "R\$ 0,00",
+                              lastLabel: "R\$ $totalDespesas",
                             ),
-                            MyTextLabel(
+                          const MyTextLabel(
                               firstLabel: "Falta pagar",
                               lastLabel: "R\$ 0,00",
                             )
@@ -139,7 +157,7 @@ class TelaHome extends StatelessWidget {
                       ],
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   )
                 ],

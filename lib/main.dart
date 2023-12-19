@@ -10,19 +10,26 @@ import 'package:projeto_f7/telas/principal.dart';
 import 'package:projeto_f7/telas/renda_mensal.dart';
 
 void main() async {
+
+  Widget telaInicial = TelaLogar();
+
   WidgetsFlutterBinding.ensureInitialized();
   try {
     await Firebase.initializeApp(
       options: DefaultFirebaseOptions.currentPlatform,
     );
-    print("Firebase iniciado");
+
+    // User? user = FirebaseAuth.instance.currentUser;
+    // if(user != null){
+    //   telaInicial = const TelaDashboard();
+    // }
   } catch (e) {
     throw ('Erro do Firebase $e');
   }
-
+  
   runApp(
     MaterialApp(
-      home: TelaLogar(),
+      home: telaInicial,
       debugShowCheckedModeBanner: false,
     ),
   );
@@ -80,8 +87,7 @@ class TelaLogar extends StatelessWidget {
                         'email': emailControll.text,
                         'senha': senhaControll.text,
                       };
-                      if (ContaFirebase.formIsEmpyt(dados) &&
-                          dados['senha'] == dados['repeatSenha']) {
+                      if (ContaFirebase.formIsEmpyt(dados)) {
                         entrar(dados);
                       } else {
                         mostrarNotificacao(context, 'Preencha todos os dados');
